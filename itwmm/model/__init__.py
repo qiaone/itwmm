@@ -51,6 +51,9 @@ def generate_texture_model_from_image_3d_fits(images_and_fits,
     3D fits (one per image). Note that the input images should already have an
     image feature taken on them, and have all been resized to a consistent
     scale."""
+    f = open("/content/fk.txt", "w")
+    f.write("shit")
+    f.close()
     feat_img, fit_2d = images_and_fits[0]
     n_channels = feat_img.n_channels
     n_features = n_channels * fit_2d.n_points
