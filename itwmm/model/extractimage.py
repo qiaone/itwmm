@@ -22,7 +22,8 @@ def per_vertex_occlusion(mesh_in_img, err_proportion=0.0001, render_diag=600):
     mesh.points[...] = mesh.points - mesh.points.min(axis=0)
     mesh.points[:, :2] = mesh.points[:, :2] + 2
     shape = np.around(mesh.points.max(axis=0)[:2] + 2)
-
+    print("shape!!!:", shape)
+    
     bc, ti = rasterize_barycentric_coordinate_images(mesh, shape)
     si = rasterize_shape_image_from_barycentric_coordinate_images(
         as_colouredtrimesh(mesh), bc, ti)
